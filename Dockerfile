@@ -1,4 +1,4 @@
-FROM postgres:9.5.4
+FROM postgres:10.0-alpine
 
 MAINTAINER Alexey Zhokhov <alexey@zhokhov.com>
 
@@ -6,6 +6,9 @@ VOLUME ["/var/lib/postgresql/data", "/var/log/postgresql"]
 
 COPY docker-entrypoint.sh /
 RUN chmod a+x /docker-entrypoint.sh
+
+COPY postgresql-tuning.sh /
+RUN chmod a+x /postgresql-tuning.sh
 
 ENTRYPOINT ["/docker-entrypoint.sh"]
 
