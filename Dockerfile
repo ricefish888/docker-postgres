@@ -1,4 +1,4 @@
-FROM postgres:10.0-alpine
+FROM postgres:9.6.5-alpine
 
 MAINTAINER Alexey Zhokhov <alexey@zhokhov.com>
 
